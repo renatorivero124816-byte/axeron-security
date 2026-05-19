@@ -48,7 +48,7 @@ export default function CerrajeriaPremium() {
             <img
               src="/logo.png"
               alt="AXERON Security"
-              className="relative z-10 h-16 sm:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] animate-pulse"
+              className="relative z-10 h-44 sm:h-52 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] animate-pulse"
             />
 
             {/* Shine effect */}
