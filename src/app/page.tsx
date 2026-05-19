@@ -202,15 +202,17 @@ export default function CerrajeriaPremium() {
             <div className="relative bg-zinc-900 border border-zinc-800 rounded-[2rem] h-[450px] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.4),transparent_60%)]" />
 
-              <div className="text-center px-8">
-                <h3 className="text-3xl font-bold mb-6 text-gray-400">
-                  Mapa Interactivo
-                </h3>
-
-                <p className="text-zinc-400 text-lg leading-relaxed">
-                  Integración con Google Maps mostrando cobertura, ubicación y atención inmediata.
-                </p>
-              </div>
+              <div className="bg-zinc-900 border border-zinc-800 rounded-[2rem] h-[350px] sm:h-[450px] overflow-hidden">
+  <iframe
+    src="https://www.google.com/maps?q=Querétaro,Mexico&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
             </div>
           </div>
         </div>
