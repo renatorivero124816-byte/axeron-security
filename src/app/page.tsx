@@ -29,18 +29,18 @@ export default function Home() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/80 backdrop-blur-2xl border-b border-zinc-800 py-3"
-            : "bg-transparent py-5"
+            ? "bg-black/80 backdrop-blur-2xl border-b border-zinc-800 py-2"
+            : "bg-transparent py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-3 items-center">
 
           {/* LOGO */}
           <div
-            className={`overflow-hidden transition-all duration-700 ${
+            className={`overflow-hidden transition-all duration-700 flex justify-start ${
               scrolled
-                ? "opacity-0 w-0 scale-90"
-                : "opacity-100 w-auto scale-100"
+                ? "opacity-0 scale-90"
+                : "opacity-100 scale-100"
             }`}
           >
             <div className="relative group flex items-center">
@@ -49,16 +49,16 @@ export default function Home() {
               <img
                 src="/logo.png"
                 alt="AXERON Security"
-                className="relative z-10 h-12 sm:h-14 md:h-16 w-auto object-contain opacity-95 transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.12)]"
+                className="relative z-10 h-14 sm:h-16 md:h-[72px] w-auto object-contain opacity-95 transition-all duration-500 group-hover:brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.12)]"
               />
 
-              {/* SHINE */}
+              {/* BRILLO */}
               <div className="absolute left-[-40%] top-0 h-full w-[20%] bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-12 blur-md animate-[shine_5s_linear_infinite]"></div>
             </div>
           </div>
 
           {/* MENU */}
-          <div className="flex items-center gap-4 sm:gap-8 uppercase tracking-[0.18em] text-[10px] sm:text-xs text-zinc-300">
+          <div className="flex items-center justify-center gap-4 sm:gap-8 uppercase tracking-[0.18em] text-[10px] sm:text-xs text-zinc-300">
 
             <a
               href="#servicios"
@@ -87,12 +87,14 @@ export default function Home() {
             >
               Contacto
             </a>
+          </div>
 
-            {/* BOTON WHATSAPP */}
+          {/* WHATSAPP */}
+          <div className="flex justify-end">
             <a
               href="https://wa.me/525656154411"
               target="_blank"
-              className="bg-zinc-200 hover:bg-white transition-all duration-300 text-black px-4 sm:px-5 py-2 sm:py-3 rounded-2xl font-semibold shadow-2xl text-sm hover:scale-105"
+              className="bg-zinc-200 hover:bg-white transition-all duration-300 text-black px-4 sm:px-5 py-2 rounded-2xl font-semibold shadow-2xl text-sm hover:scale-105"
             >
               WhatsApp
             </a>
@@ -274,17 +276,17 @@ export default function Home() {
           <div className="mt-10 grid gap-4">
 
             <input
-              className="bg-black border border-zinc-700 p-4 rounded-2xl"
+              className="bg-black border border-zinc-700 p-4 rounded-2xl outline-none"
               placeholder="Nombre"
             />
 
             <input
-              className="bg-black border border-zinc-700 p-4 rounded-2xl"
+              className="bg-black border border-zinc-700 p-4 rounded-2xl outline-none"
               placeholder="Teléfono"
             />
 
             <textarea
-              className="bg-black border border-zinc-700 p-4 rounded-2xl"
+              className="bg-black border border-zinc-700 p-4 rounded-2xl outline-none"
               placeholder="Mensaje"
               rows={5}
             />
