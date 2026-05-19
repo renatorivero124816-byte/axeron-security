@@ -1,328 +1,196 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
-export default function CerrajeriaPremium() {
-  const [scrolled, setScrolled] = useState(false)
+export default function CerrajeriaPremium() { const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
+useEffect(() => { const handleScroll = () => { setScrolled(window.scrollY > 20) }
 
-    window.addEventListener("scroll", handleScroll)
+window.addEventListener("scroll", handleScroll)
+return () => window.removeEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+}, [])
 
-  return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden font-sans scroll-smooth">
-      
-      {/* NAVBAR */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/80 backdrop-blur-2xl border-b border-gray-500/10"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-[0.2em] text-gray-400">
-            AXERON
-          </h1>
+return ( <div className="min-h-screen bg-zinc-950 text-zinc-100 overflow-x-hidden font-sans scroll-smooth">
 
-          <div className="hidden md:flex items-center gap-8 uppercase tracking-[0.18em] text-sm text-zinc-300">
-            <a href="#servicios" className="hover:text-gray-400 transition-all">
-              Servicios
-            </a>
+{/* NAVBAR */}
+  <nav
+    className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      scrolled
+        ? "bg-zinc-950/80 backdrop-blur-2xl border-b border-zinc-700"
+        : "bg-transparent"
+    }`}
+  >
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-4 flex items-center justify-between">
+      <h1 className="text-xl sm:text-2xl font-bold tracking-[0.2em] text-zinc-200">
+        AXERON
+      </h1>
 
-            <a href="#cobertura" className="hover:text-gray-400 transition-all">
-              Cobertura
-            </a>
-
-            <a href="#premium" className="hover:text-gray-400 transition-all">
-              Premium
-            </a>
-
-            <a href="#contacto" className="hover:text-gray-400 transition-all">
-              Contacto
-            </a>
-          </div>
-
-          <a
-            href="https://wa.me/525656154411"
-            target="_blank"
-            className="bg-gray-500 hover:bg-gray-400 transition-all duration-300 text-black px-5 py-3 rounded-2xl font-semibold shadow-2xl"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </nav>
-
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10 opacity-30">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gray-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gray-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="hidden md:flex items-center gap-8 uppercase tracking-[0.18em] text-xs sm:text-sm text-zinc-300">
+        <a href="#servicios" className="hover:text-zinc-100 transition">Servicios</a>
+        <a href="#cobertura" className="hover:text-zinc-100 transition">Cobertura</a>
+        <a href="#premium" className="hover:text-zinc-100 transition">Premium</a>
+        <a href="#contacto" className="hover:text-zinc-100 transition">Contacto</a>
       </div>
 
-      {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-black via-zinc-900 to-black">
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.35),transparent_60%)]" />
-
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <div className="mb-6">
-            <div className="inline-block border border-gray-500/30 px-5 py-2 rounded-full text-sm tracking-[0.25em] uppercase text-gray-400">
-              Cerrajería Premium
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-            Seguridad Residencial
-            <span className="block text-gray-400">
-              Profesional 24/7
-            </span>
-          </h1>
-
-          <p className="mt-8 text-zinc-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Servicio especializado para residenciales, departamentos y condominios premium en Querétaro.
-          </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/525656154411"
-              target="_blank"
-              className="bg-gray-500 hover:bg-gray-400 transition-all duration-300 text-black font-semibold px-8 py-4 rounded-2xl shadow-2xl"
-            >
-              Solicitar Servicio
-            </a>
-
-            <a
-              href="tel:+525656154411"
-              className="border border-zinc-700 hover:border-gray-500 transition-all duration-300 px-8 py-4 rounded-2xl backdrop-blur-md bg-white/5"
-            >
-              Llamar Ahora
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICIOS */}
-      <section
-        id="servicios"
-        className="py-24 px-6 md:px-16 bg-zinc-950"
+      <a
+        href="https://wa.me/525656154411"
+        target="_blank"
+        className="bg-zinc-300 hover:bg-zinc-200 transition text-black px-4 sm:px-5 py-2 sm:py-3 rounded-2xl font-semibold shadow-2xl text-sm sm:text-base"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Servicios
-            </h2>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
 
-            <p className="text-zinc-400 mt-4 text-lg">
-              Atención profesional con enfoque residencial y condominal.
+  {/* BACKGROUND */}
+  <div className="fixed inset-0 -z-10 opacity-40">
+    <div className="absolute top-0 left-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-zinc-500/20 rounded-full blur-3xl animate-pulse" />
+    <div className="absolute bottom-0 right-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-zinc-400/10 rounded-full blur-3xl animate-pulse" />
+  </div>
+
+  {/* HERO */}
+  <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-zinc-900 to-black px-4">
+    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(180,180,180,0.25),transparent_60%)]" />
+
+    <div className="relative z-10 text-center max-w-4xl">
+      <div className="mb-6">
+        <div className="inline-block border border-zinc-600 px-5 py-2 rounded-full text-xs sm:text-sm tracking-[0.25em] uppercase text-zinc-300">
+          AXERON SECURITY
+        </div>
+      </div>
+
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight tracking-tight">
+        Seguridad Residencial
+        <span className="block text-zinc-300">
+          Profesional 24/7
+        </span>
+      </h1>
+
+      <p className="mt-6 sm:mt-8 text-zinc-300 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto">
+        Servicio especializado para residenciales, departamentos y condominios premium en Querétaro.
+      </p>
+
+      <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://wa.me/525656154411"
+          target="_blank"
+          className="bg-zinc-300 hover:bg-zinc-200 transition text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl shadow-2xl"
+        >
+          Solicitar Servicio
+        </a>
+
+        <a
+          href="tel:+525656154411"
+          className="border border-zinc-600 hover:border-zinc-300 transition px-6 sm:px-8 py-3 sm:py-4 rounded-2xl bg-white/5"
+        >
+          Llamar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* SERVICIOS */}
+  <section id="servicios" className="py-20 sm:py-24 px-4 sm:px-6 md:px-16 bg-zinc-950">
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-14 sm:mb-16">
+        <h2 className="text-3xl sm:text-5xl font-bold">Servicios</h2>
+        <p className="text-zinc-400 mt-4 text-base sm:text-lg">
+          Atención profesional residencial y condominal.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {[
+          "Apertura Residencial",
+          "Apertura de Departamentos",
+          "Cambio de Chapas",
+          "Instalación de Cerraduras",
+          "Cerraduras Inteligentes",
+          "Reparación de Cerraduras",
+          "Mantenimiento Residencial",
+          "Emergencias 24/7",
+          "Servicio para Condominios",
+        ].map((service) => (
+          <div
+            key={service}
+            className="group relative bg-zinc-900 border border-zinc-700 hover:border-zinc-400 rounded-3xl p-6 sm:p-8 transition hover:-translate-y-1"
+          >
+            <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-6" />
+
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3">
+              {service}
+            </h3>
+
+            <p className="text-zinc-400 text-sm sm:text-base">
+              Servicio rápido, discreto y profesional para residenciales.
             </p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "Apertura Residencial",
-              "Apertura de Departamentos",
-              "Cambio de Chapas",
-              "Instalación de Cerraduras",
-              "Cerraduras Inteligentes",
-              "Reparación de Cerraduras",
-              "Mantenimiento Residencial",
-              "Emergencias 24/7",
-              "Servicio para Condominios",
-            ].map((service) => (
-              <div
-                key={service}
-                className="group relative bg-zinc-900 border border-zinc-800 hover:border-gray-500/40 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,215,0,0.08)]"
-              >
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-gray-500/10 to-transparent" />
+  {/* COBERTURA */}
+  <section id="cobertura" className="py-20 sm:py-24 px-4 sm:px-6 md:px-16 bg-black">
+    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+      <div>
+        <h2 className="text-3xl sm:text-5xl font-bold">
+          Cobertura en <span className="block text-zinc-300">Querétaro</span>
+        </h2>
 
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-gray-500/10 border border-gray-500/20 flex items-center justify-center mb-6">
-                    <div className="w-6 h-6 rounded-full bg-gray-400" />
-                  </div>
+        <p className="mt-6 sm:mt-8 text-zinc-400 text-base sm:text-lg">
+          Atención en zonas residenciales y condominios premium.
+        </p>
 
-                  <h3 className="text-2xl font-semibold mb-4">
-                    {service}
-                  </h3>
-
-                  <p className="text-zinc-400 leading-relaxed">
-                    Atención rápida, discreta y profesional con herramientas especializadas y servicio de calidad.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COBERTURA */}
-      <section
-        id="cobertura"
-        className="py-24 px-6 md:px-16 bg-black"
-      >
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Cobertura en
-              <span className="block text-gray-400">
-                Querétaro
-              </span>
-            </h2>
-
-            <p className="mt-8 text-zinc-400 text-lg leading-relaxed">
-              Servicio enfocado en zonas residenciales y condominios premium con atención rápida y profesional.
-            </p>
-
-            <div className="mt-10 grid grid-cols-2 gap-4 text-lg">
-              {[
-                "Juriquilla",
-                "Zibatá",
-                "El Campanario",
-                "Milenio",
-                "El Refugio",
-                "Centro Sur",
-              ].map((zone) => (
-                <div
-                  key={zone}
-                  className="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-4 hover:border-gray-500/40 transition-all"
-                >
-                  {zone}
-                </div>
-              ))}
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+          {["Juriquilla","Zibatá","El Campanario","Milenio","El Refugio","Centro Sur"].map((z) => (
+            <div key={z} className="bg-zinc-900 border border-zinc-800 rounded-2xl px-4 py-3 text-sm sm:text-base">
+              {z}
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gray-500/10 blur-3xl rounded-full" />
+      <div className="bg-zinc-900 border border-zinc-800 rounded-[2rem] h-[350px] sm:h-[450px] overflow-hidden shadow-2xl">
 
-            <div className="relative bg-zinc-900 border border-zinc-800 rounded-[2rem] h-[450px] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.4),transparent_60%)]" />
-
-              <div className="relative bg-zinc-900 border border-zinc-800 rounded-[2rem] h-[350px] sm:h-[450px] overflow-hidden shadow-2xl">
   <iframe
     src="https://www.google.com/maps?q=Querétaro,Mexico&output=embed"
-    className="absolute inset-0 w-full h-full"
+    width="100%"
+    height="100%"
     style={{ border: 0 }}
-    allowFullScreen
+    allowFullScreen={true}
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
+  />
 </div>
-            </div>
-          </div>
         </div>
-      </section>
-
-      {/* PREMIUM */}
-      <section
-        id="premium"
-        className="relative py-28 px-6 md:px-16 bg-zinc-950 overflow-hidden"
-      >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gray-500/10 rounded-full blur-3xl" />
-
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block border border-gray-500/20 bg-gray-500/5 rounded-full px-5 py-2 text-gray-400 tracking-[0.2em] uppercase text-sm">
-              Experiencia Premium
-            </div>
-
-            <h2 className="mt-8 text-5xl md:text-6xl font-bold leading-tight">
-              Seguridad, Tecnología
-              <span className="block text-gray-400">
-                y Atención Profesional
-              </span>
-            </h2>
-
-            <p className="mt-8 text-zinc-400 text-xl leading-relaxed">
-              Servicio especializado para clientes que buscan rapidez, discreción y atención residencial de alto nivel.
-            </p>
-          </div>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Herramientas Profesionales",
-                desc: "Equipo moderno y especializado para trabajos residenciales y condominales.",
-              },
-              {
-                title: "Atención Inmediata",
-                desc: "Respuesta rápida y eficiente con enfoque profesional y discreto.",
-              },
-              {
-                title: "Garantía de Servicio",
-                desc: "Compromiso con calidad, seguridad y atención confiable.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-black/40 backdrop-blur-xl border border-zinc-800 rounded-[2rem] p-10 hover:border-gray-500/30 transition-all duration-500"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-gray-500/10 border border-gray-500/20 mb-8" />
-
-                <h3 className="text-2xl font-semibold mb-5">
-                  {item.title}
-                </h3>
-
-                <p className="text-zinc-400 leading-relaxed text-lg">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACTO */}
-      <section
-        id="contacto"
-        className="py-24 px-6 md:px-16 bg-black"
-      >
-        <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-800 rounded-[2rem] p-10 md:p-14 shadow-2xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Solicitar Servicio
-            </h2>
-
-            <p className="text-zinc-400 mt-5 text-lg">
-              Atención inmediata para residenciales y condominios.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              placeholder="Nombre"
-              className="bg-black border border-zinc-800 rounded-2xl px-5 py-4 outline-none focus:border-gray-500 transition-all"
-            />
-
-            <input
-              type="tel"
-              placeholder="Teléfono"
-              className="bg-black border border-zinc-800 rounded-2xl px-5 py-4 outline-none focus:border-gray-500 transition-all"
-            />
-
-            <input
-              type="text"
-              placeholder="Ubicación"
-              className="md:col-span-2 bg-black border border-zinc-800 rounded-2xl px-5 py-4 outline-none focus:border-gray-500 transition-all"
-            />
-
-            <textarea
-              placeholder="Describe el servicio requerido"
-              rows={5}
-              className="md:col-span-2 bg-black border border-zinc-800 rounded-2xl px-5 py-4 outline-none focus:border-gray-500 transition-all"
-            />
-          </div>
-
-          <button className="mt-8 w-full bg-gray-500 hover:bg-gray-400 transition-all duration-300 text-black font-semibold py-5 rounded-2xl text-lg shadow-2xl">
-            Enviar Solicitud
-          </button>
-        </div>
-      </section>
+      </section>{/* PREMIUM */}
+  <section id="premium" className="py-24 px-4 sm:px-6 md:px-16 bg-zinc-950">
+    <div className="max-w-7xl mx-auto text-center">
+      <h2 className="text-3xl sm:text-5xl font-bold">Experiencia Premium</h2>
+      <p className="mt-6 text-zinc-400 text-base sm:text-xl max-w-3xl mx-auto">
+        Seguridad, tecnología y atención profesional para clientes residenciales.
+      </p>
     </div>
-  )
-}
+  </section>
+
+  {/* CONTACTO */}
+  <section id="contacto" className="py-24 px-4 sm:px-6 md:px-16 bg-black">
+    <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-10">
+      <h2 className="text-3xl sm:text-5xl font-bold text-center">Contacto</h2>
+
+      <div className="mt-10 grid gap-4">
+        <input className="bg-black border border-zinc-700 p-4 rounded-2xl" placeholder="Nombre" />
+        <input className="bg-black border border-zinc-700 p-4 rounded-2xl" placeholder="Teléfono" />
+        <textarea className="bg-black border border-zinc-700 p-4 rounded-2xl" placeholder="Mensaje" rows={5} />
+      </div>
+
+      <button className="mt-6 w-full bg-zinc-300 hover:bg-zinc-200 text-black py-4 rounded-2xl font-semibold">
+        Enviar Solicitud
+      </button>
+    </div>
+  </section>
+</div>
+
+) }
