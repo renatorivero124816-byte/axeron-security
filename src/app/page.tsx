@@ -18,11 +18,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-x-hidden">
 
-      {/* BACKGROUND CYBER */}
+      {/* BACKGROUND */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-15%] left-[-10%] w-[500px] h-[500px] bg-zinc-300/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-[-15%] left-[-10%] w-[500px] h-[500px] bg-zinc-300/5 rounded-full blur-3xl"></div>
 
-        <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
       {/* NAVBAR */}
@@ -39,26 +39,21 @@ export default function Home() {
           <div
             className={`overflow-hidden transition-all duration-700 ${
               scrolled
-                ? "opacity-0 w-0 scale-75"
+                ? "opacity-0 w-0 scale-90"
                 : "opacity-100 w-auto scale-100"
             }`}
           >
-            <div className="relative group flex items-center justify-center">
-
-              {/* GLOW */}
-              <div className="absolute inset-0 bg-zinc-300/20 blur-3xl opacity-60 group-hover:opacity-100 transition duration-700 animate-pulse rounded-full"></div>
-
-              <div className="absolute inset-0 bg-white/10 blur-2xl opacity-40 group-hover:opacity-80 transition duration-700 rounded-full"></div>
+            <div className="relative group flex items-center">
 
               {/* LOGO */}
               <img
                 src="/logo.png"
                 alt="AXERON Security"
-                className="relative z-10 h-28 sm:h-36 md:h-40 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_35px_rgba(255,255,255,0.35)] animate-pulse"
+                className="relative z-10 h-12 sm:h-14 md:h-16 w-auto object-contain opacity-95 transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.12)]"
               />
 
-              {/* BRILLO */}
-              <div className="absolute left-[-40%] top-0 h-full w-[30%] bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 blur-md animate-[shine_4s_linear_infinite]"></div>
+              {/* SHINE */}
+              <div className="absolute left-[-40%] top-0 h-full w-[20%] bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-12 blur-md animate-[shine_5s_linear_infinite]"></div>
             </div>
           </div>
 
