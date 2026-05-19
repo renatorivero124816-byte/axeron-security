@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react"
 
-export default function CerrajeriaPremium() {
+export default function Home() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 80)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -16,111 +16,129 @@ export default function CerrajeriaPremium() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 overflow-x-hidden scroll-smooth">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
 
       {/* BACKGROUND CYBER */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-zinc-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-[-15%] left-[-10%] w-[500px] h-[500px] bg-zinc-300/10 rounded-full blur-3xl animate-pulse"></div>
 
-        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       {/* NAVBAR */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/70 backdrop-blur-2xl border-b border-zinc-800"
-            : "bg-transparent"
+            ? "bg-black/80 backdrop-blur-2xl border-b border-zinc-800 py-3"
+            : "bg-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between">
 
-          {/* LOGO CYBER PREMIUM */}
-          <div className="relative group flex items-center justify-center">
+          {/* LOGO */}
+          <div
+            className={`overflow-hidden transition-all duration-700 ${
+              scrolled
+                ? "opacity-0 w-0 scale-75"
+                : "opacity-100 w-auto scale-100"
+            }`}
+          >
+            <div className="relative group flex items-center justify-center">
 
-            {/* Glow principal */}
-            <div className="absolute inset-0 bg-zinc-300/20 blur-3xl opacity-60 group-hover:opacity-100 transition duration-700 animate-pulse rounded-full"></div>
+              {/* GLOW */}
+              <div className="absolute inset-0 bg-zinc-300/20 blur-3xl opacity-60 group-hover:opacity-100 transition duration-700 animate-pulse rounded-full"></div>
 
-            {/* Glow secundario */}
-            <div className="absolute inset-0 bg-white/10 blur-2xl opacity-40 group-hover:opacity-80 transition duration-700 rounded-full"></div>
+              <div className="absolute inset-0 bg-white/10 blur-2xl opacity-40 group-hover:opacity-80 transition duration-700 rounded-full"></div>
 
-            {/* Logo */}
-            <img
-              src="/logo.png"
-              alt="AXERON Security"
-              className="relative z-10 h-44 sm:h-52 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] animate-pulse"
-            />
+              {/* LOGO */}
+              <img
+                src="/logo.png"
+                alt="AXERON Security"
+                className="relative z-10 h-28 sm:h-36 md:h-40 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 drop-shadow-[0_0_35px_rgba(255,255,255,0.35)] animate-pulse"
+              />
 
-            {/* Shine effect */}
-            <div className="absolute left-[-40%] top-0 h-full w-[30%] bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 blur-md animate-[shine_4s_linear_infinite]"></div>
+              {/* BRILLO */}
+              <div className="absolute left-[-40%] top-0 h-full w-[30%] bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 blur-md animate-[shine_4s_linear_infinite]"></div>
+            </div>
           </div>
 
           {/* MENU */}
-          <div className="hidden md:flex items-center gap-8 uppercase tracking-[0.18em] text-xs text-zinc-300">
-            <a href="#servicios" className="hover:text-white transition">
+          <div className="flex items-center gap-4 sm:gap-8 uppercase tracking-[0.18em] text-[10px] sm:text-xs text-zinc-300">
+
+            <a
+              href="#servicios"
+              className="hover:text-white transition duration-300"
+            >
               Servicios
             </a>
 
-            <a href="#cobertura" className="hover:text-white transition">
+            <a
+              href="#cobertura"
+              className="hover:text-white transition duration-300"
+            >
               Cobertura
             </a>
 
-            <a href="#premium" className="hover:text-white transition">
+            <a
+              href="#premium"
+              className="hover:text-white transition duration-300"
+            >
               Premium
             </a>
 
-            <a href="#contacto" className="hover:text-white transition">
+            <a
+              href="#contacto"
+              className="hover:text-white transition duration-300"
+            >
               Contacto
             </a>
-          </div>
 
-          {/* BOTON */}
-          <a
-            href="https://wa.me/525656154411"
-            target="_blank"
-            className="bg-zinc-200 hover:bg-white transition text-black px-4 sm:px-5 py-2 sm:py-3 rounded-2xl font-semibold shadow-2xl text-sm"
-          >
-            WhatsApp
-          </a>
+            {/* BOTON WHATSAPP */}
+            <a
+              href="https://wa.me/525656154411"
+              target="_blank"
+              className="bg-zinc-200 hover:bg-white transition-all duration-300 text-black px-4 sm:px-5 py-2 sm:py-3 rounded-2xl font-semibold shadow-2xl text-sm hover:scale-105"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section className="relative min-h-screen flex items-center justify-center px-6 text-center">
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]"></div>
+        <div className="max-w-5xl">
 
-        <div className="relative z-10 text-center max-w-5xl">
-
-          <div className="inline-block border border-zinc-700 px-5 py-2 rounded-full text-xs tracking-[0.25em] uppercase text-zinc-300 mb-6">
+          <div className="inline-block border border-zinc-700 px-5 py-2 rounded-full text-xs tracking-[0.25em] uppercase text-zinc-300 mb-8">
             AXERON SECURITY
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
-            Seguridad Residencial
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold leading-tight">
+            Seguridad
             <span className="block text-zinc-300">
-              Precisión y Tecnología
+              Residencial Premium
             </span>
           </h1>
 
-          <p className="mt-8 text-zinc-400 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
-            Servicio profesional especializado para residenciales,
-            condominios y departamentos premium.
+          <p className="mt-8 text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            Tecnología, precisión y atención profesional para condominios,
+            residenciales y clientes premium en Querétaro.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
 
             <a
               href="https://wa.me/525656154411"
               target="_blank"
-              className="bg-zinc-200 hover:bg-white transition text-black font-semibold px-8 py-4 rounded-2xl shadow-2xl"
+              className="bg-zinc-200 hover:bg-white transition-all duration-300 text-black px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-105"
             >
               Solicitar Servicio
             </a>
 
             <a
               href="tel:+525656154411"
-              className="border border-zinc-700 hover:border-zinc-300 transition px-8 py-4 rounded-2xl bg-white/5"
+              className="border border-zinc-700 hover:border-zinc-300 transition-all duration-300 px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10"
             >
               Llamar Ahora
             </a>
@@ -131,17 +149,17 @@ export default function CerrajeriaPremium() {
       {/* SERVICIOS */}
       <section
         id="servicios"
-        className="py-24 px-4 sm:px-6 md:px-16 bg-zinc-950"
+        className="py-24 px-6 md:px-16 bg-zinc-950"
       >
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold">
+            <h2 className="text-4xl sm:text-5xl font-bold">
               Servicios
             </h2>
 
-            <p className="text-zinc-400 mt-4 text-base sm:text-lg">
-              Atención profesional residencial y condominal.
+            <p className="text-zinc-400 mt-4 text-lg">
+              Atención profesional y discreta.
             </p>
           </div>
 
@@ -149,18 +167,15 @@ export default function CerrajeriaPremium() {
 
             {[
               "Apertura Residencial",
-              "Apertura de Departamentos",
               "Cambio de Chapas",
-              "Instalación de Cerraduras",
               "Cerraduras Inteligentes",
               "Reparación de Cerraduras",
               "Mantenimiento Residencial",
               "Emergencias 24/7",
-              "Servicio para Condominios",
             ].map((service) => (
               <div
                 key={service}
-                className="group bg-zinc-900 border border-zinc-800 hover:border-zinc-400 transition-all duration-500 rounded-3xl p-8 hover:-translate-y-1"
+                className="group bg-black border border-zinc-800 hover:border-zinc-400 transition-all duration-500 rounded-3xl p-8 hover:-translate-y-2"
               >
                 <div className="w-14 h-14 rounded-2xl bg-zinc-800 border border-zinc-700 mb-6"></div>
 
@@ -169,7 +184,7 @@ export default function CerrajeriaPremium() {
                 </h3>
 
                 <p className="text-zinc-400">
-                  Servicio rápido, discreto y profesional.
+                  Atención rápida y profesional.
                 </p>
               </div>
             ))}
@@ -180,20 +195,20 @@ export default function CerrajeriaPremium() {
       {/* COBERTURA */}
       <section
         id="cobertura"
-        className="py-24 px-4 sm:px-6 md:px-16 bg-black"
+        className="py-24 px-6 md:px-16 bg-black"
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           <div>
-            <h2 className="text-3xl sm:text-5xl font-bold">
-              Cobertura en
+            <h2 className="text-4xl sm:text-5xl font-bold">
+              Cobertura
               <span className="block text-zinc-300">
                 Querétaro
               </span>
             </h2>
 
-            <p className="mt-8 text-zinc-400 text-base sm:text-lg">
-              Atención especializada en zonas residenciales y condominios premium.
+            <p className="mt-8 text-zinc-400 text-lg">
+              Atención especializada en zonas premium y residenciales.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
@@ -235,16 +250,17 @@ export default function CerrajeriaPremium() {
       {/* PREMIUM */}
       <section
         id="premium"
-        className="py-24 px-4 sm:px-6 md:px-16 bg-zinc-950"
+        className="py-24 px-6 md:px-16 bg-zinc-950"
       >
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
 
-          <h2 className="text-3xl sm:text-5xl font-bold">
+          <h2 className="text-4xl sm:text-5xl font-bold">
             Experiencia Premium
           </h2>
 
-          <p className="mt-6 text-zinc-400 text-base sm:text-xl max-w-3xl mx-auto">
-            Seguridad, tecnología y atención profesional para clientes residenciales.
+          <p className="mt-8 text-zinc-400 text-lg leading-relaxed">
+            Seguridad, discreción y tecnología para clientes residenciales,
+            condominios y propiedades premium.
           </p>
         </div>
       </section>
@@ -252,11 +268,11 @@ export default function CerrajeriaPremium() {
       {/* CONTACTO */}
       <section
         id="contacto"
-        className="py-24 px-4 sm:px-6 md:px-16 bg-black"
+        className="py-24 px-6 md:px-16 bg-black"
       >
-        <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-10">
+        <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-800 rounded-3xl p-8 sm:p-12">
 
-          <h2 className="text-3xl sm:text-5xl font-bold text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center">
             Contacto
           </h2>
 
@@ -279,11 +295,11 @@ export default function CerrajeriaPremium() {
             />
           </div>
 
-          <button className="mt-6 w-full bg-zinc-200 hover:bg-white text-black py-4 rounded-2xl font-semibold transition">
+          <button className="mt-6 w-full bg-zinc-200 hover:bg-white transition-all duration-300 text-black py-4 rounded-2xl font-semibold hover:scale-[1.02]">
             Enviar Solicitud
           </button>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
